@@ -49,3 +49,27 @@ JOIN payment p
 ON t1.customer_id = p.customer_id
 GROUP BY 1, 2
 ORDER BY 2;
+
+
+WITH t2 AS (SELECT DATE_TRUNC('month', p.payment_date) pay_mon,
+                t1.fullname,
+                COUNT(*),
+                SUM(p.amount) pay_amount
+           FROM (SELECT p.customer_id customer_id,
+                CONCAT(c.first_name, ' ', c.last_name) fullname,
+                SUM(p.amount) pay_amount      
+                FROM payment p
+                JOIN customer c
+                ON p.customer_id = c.customer_id
+                GROUP BY 1, 2
+                ORDER BY 3 DESC
+                LIMIT 10) t1
+           JOIN payment p
+           ON t1.customer_id = p.customer_id
+           GROUP BY 1, 2
+           ORDER BY 2)
+           
+SELECT *,
+        LEAD(pay_amount) OVER (PARTITION BY fullname ORDER BY pay_mon) AS lead,
+        LEAD(pay_amount) OVER (PARTITION BY fullname ORDER BY pay_mon) - pay_amount AS lead_diff
+FROM t2;
