@@ -16,4 +16,4 @@ FROM (SELECT f.film_id film_id,
         ON i.inventory_id = r.inventory_id
         WHERE c.name IN ('Animation', 'Children', 'Classics', 'Comedy', 'Family', 'Music')) t1
 GROUP BY 1, 2
-ORDER BY 2, 1
+ORDER BY 2, 1;
