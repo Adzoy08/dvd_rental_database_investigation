@@ -4,13 +4,14 @@ Created on: September 2023
 
 
 ### Overview
-The **Sakila Movie Database** is a SQL database of online DVD rentals. It was queried to answer questions about business decisions.<br>
-To know more about this sample database, please click [here](https://www.postgresqltutorial.com/postgresql-getting-started/postgresql-sample-database/) 
+The **Sakila Movie Database** is a SQL database of online DVD rentals.<br> 
+It was queried to answer questions about business decisions.<br>
+To know more about this sample database, please click [here](https://www.postgresqltutorial.com/postgresql-getting-started/postgresql-sample-database/). 
 
 
 
 ### Business Question
-* Provide an analysis of the rental order trends for each family movie category
+* Provide an analysis of the rental order trends for each family movie category.
 
 * Which month had the highest number of rental orders for each store?
 
