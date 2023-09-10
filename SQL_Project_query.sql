@@ -18,6 +18,8 @@ FROM (SELECT f.film_id film_id,
 GROUP BY 1, 2
 ORDER BY 2, 1;
 
+
+/*Query 2 - query used for second insight*/
 SELECT DATE_PART('month', r.rental_date) rental_month,
         DATE_PART('year', r.rental_date) rental_year,
         s.store_id store_id,
