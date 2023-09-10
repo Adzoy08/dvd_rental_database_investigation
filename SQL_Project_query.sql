@@ -17,3 +17,13 @@ FROM (SELECT f.film_id film_id,
         WHERE c.name IN ('Animation', 'Children', 'Classics', 'Comedy', 'Family', 'Music')) t1
 GROUP BY 1, 2
 ORDER BY 2, 1;
+
+SELECT DATE_PART('month', r.rental_date) rental_month,
+        DATE_PART('year', r.rental_date) rental_year,
+        s.store_id store_id,
+        COUNT(*)
+FROM rental r
+JOIN staff s
+ON r.staff_id = s.staff_id
+GROUP BY 1, 2, 3
+ORDER BY 4 DESC;
