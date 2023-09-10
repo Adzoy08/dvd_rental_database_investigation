@@ -31,6 +31,7 @@ GROUP BY 1, 2, 3
 ORDER BY 4 DESC;
 
 
+/*Query 3 - query used for third insight*/
 SELECT DATE_TRUNC('month', p.payment_date) pay_mon,
         t1.fullname,
         COUNT(*),
