@@ -51,6 +51,7 @@ GROUP BY 1, 2
 ORDER BY 2;
 
 
+/*Query 4 - query used for fourth insight*/
 WITH t2 AS (SELECT DATE_TRUNC('month', p.payment_date) pay_mon,
                 t1.fullname,
                 COUNT(*),
