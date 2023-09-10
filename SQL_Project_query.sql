@@ -1,3 +1,4 @@
+/*Query 1 - query used for first insight*/
 SELECT film_title, category_name, COUNT(*) rental_count
 FROM (SELECT f.film_id film_id,
         i.inventory_id inventory_id,
