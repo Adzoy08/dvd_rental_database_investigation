@@ -1,6 +1,6 @@
 # Investigate a Relational Database
 By: S. D. Boadi<br>
-Created on: September 2023
+Created on: August 2023
 
 
 ### Overview
